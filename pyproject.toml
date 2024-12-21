@@ -1,0 +1,13 @@
+[project]
+name = "comfyui_prompt_list_json"
+description = "ComfyUI JSON-based prompt management tool."
+version = "1.0.0"
+license = { file = "LICENSE" }
+
+[project.urls]
+Repository = "https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON"
+
+[tool.comfy]
+PublisherId = "TKLAB"
+DisplayName = "ComfyUI_Prompt_List_JSON"
+Icon = ""
