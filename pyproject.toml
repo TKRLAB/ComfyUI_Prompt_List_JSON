@@ -8,6 +8,6 @@ license = { file = "LICENSE" }
 Repository = "https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON"
 
 [tool.comfy]
-PublisherId = "TKLAB"
+PublisherId = "TKRLAB"
 DisplayName = "ComfyUI_Prompt_List_JSON"
 Icon = ""
