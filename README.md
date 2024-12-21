@@ -16,10 +16,14 @@ This repository provides a custom node for [ComfyUI](https://github.com/comfyano
    git clone https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON.git
    ```
 2. Restart ComfyUI to load the custom node.
+#### Alt method
+1. Install from ComfyUI manager
+
+![ComfyUI manager](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/manager.png)
 
 ## Usage
 
-![node on manager](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_on_manager.png)
+![node in menu](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_in_menu.png)
 
 ### Node Inputs
 
