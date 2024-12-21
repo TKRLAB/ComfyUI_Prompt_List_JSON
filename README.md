@@ -18,7 +18,9 @@ This repository provides a custom node for [ComfyUI](https://github.com/comfyano
 2. Restart ComfyUI to load the custom node.
 
 ## Usage
+
 ![node on manager](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_on_manager.png)
+
 ### Node Inputs
 
 - **Prompt Name** (required): A unique name for the prompt.
@@ -40,7 +42,9 @@ This repository provides a custom node for [ComfyUI](https://github.com/comfyano
    - **Negative Prompt**: `Low quality, blurry`
    - **Overwrite**: `True`
    - **Console log**: `True`
+
 ![node](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node.png)
+
 2. The prompt will be saved to the JSON file, and its details will appear in the console if logging is enabled.
 
 ### File Structure
@@ -76,8 +80,10 @@ positive, negative = manager.process(
 ### Error Handling
 
 - Raises a `ValueError` if a required field (e.g., `Prompt Name` or `Positive Prompt`) is missing.
+
 ![error prompt name](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_err1.png)
 ![error positive prompt](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_err2.png)
+
 ## License
 
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
