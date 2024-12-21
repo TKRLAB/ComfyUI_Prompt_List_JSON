@@ -13,7 +13,7 @@ This repository provides a custom node for [ComfyUI](https://github.com/comfyano
 
 1. Clone or download this repository to your ComfyUI custom node directory:
    ```bash
-   git clone https://github.com/your-repository-url ComfyUI/custom_nodes
+   git clone https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON.git
    ```
 2. Restart ComfyUI to load the custom node.
 
