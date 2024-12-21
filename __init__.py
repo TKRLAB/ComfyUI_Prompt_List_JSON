@@ -1,5 +1,5 @@
 """
-@author: TKLAB
+@author: TKRLAB
 @title: ComfyUI_Prompt_List_JSON
 @description: ComfyUI JSON-based prompt management tool.
 """
