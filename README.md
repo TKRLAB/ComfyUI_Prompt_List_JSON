@@ -18,11 +18,21 @@ This repository provides a custom node for [ComfyUI](https://github.com/comfyano
    ```
 2. Restart ComfyUI to load the custom node.
 
-#### Alternative Method
+#### Alternative Method (ComfyUI manager)
 
 1. Install using the ComfyUI manager.
 
 ![ComfyUI manager](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/manager.png)
+
+#### Alternative Method (comfy-cli)
+1. Install comfy-cli ([read docs](https://docs.comfy.org/comfy-cli/getting-started))
+   ```bash
+   install comfy-cli
+   ```
+2. Install custome node
+   ```bash
+   comfy node registry-install comfyui_prompt_list_json
+   ```
 
 ## Usage
 
