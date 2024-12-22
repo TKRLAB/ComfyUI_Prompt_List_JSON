@@ -1,11 +1,12 @@
 [project]
-name = "ComfyUI_Prompt_List_JSON"
+name = "comfyui_prompt_list_json"
 description = "ComfyUI JSON-based prompt management tool."
 version = "1.2.0"
-license = { file = "LICENSE" }
+license = {file = "LICENSE"}
 
 [project.urls]
 Repository = "https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON"
+#  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
 PublisherId = "tkrlab"
