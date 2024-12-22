@@ -57,7 +57,6 @@ This repository provides a custom node for [ComfyUI](https://github.com/comfyano
    - **Console Log**: `True`
    - **Random**: `True`
 
-![Node](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node.png)
 ![Node_prev_list](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_prev_list.png)
 
 2. The prompt will be saved to the specified JSON file, and its details will appear in the console if logging is enabled.
