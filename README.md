@@ -1,13 +1,14 @@
 # ComfyUI Custom Node: Prompt List JSON
 
-This repository provides a custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that allows managing positive and negative prompts in a structured JSON format. The node supports adding, updating, and logging prompts, ensuring seamless integration into your workflow.
+This repository provides a custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that allows managing positive and negative prompts in a structured JSON format. The node supports creating new prompt lists, random prompt selection, and logging prompt details to the console for seamless integration into your workflow.
 
 ## Features
 
-- 📂 **JSON-based prompt management**: Prompts are stored in a single `list.json` file for easy editing and retrieval.
-- 🔄 **Add or update prompts**: Supports both creating new prompts and overwriting existing ones.
-- 🖥️ **Console logging**: Optionally logs prompt details for debugging or verification.
-- 🛠️ **Automatic file management**: Creates necessary directories and files automatically if they do not exist.
+- 📂 **JSON-based prompt management**: Prompts are stored in individual JSON files for easy editing and retrieval.
+- 🔄 **Add or update prompts**: Supports creating new prompt lists, updating existing prompts, and overwriting as needed.
+- 🎲 **Random prompt selection**: Choose a random prompt from an existing list with ease.
+- 🖥️ **Console logging**: Optionally logs prompt details with formatted outputs for debugging or verification.
+- 🛠️ **Automatic file management**: Ensures required directories and files are created automatically.
 
 ## Installation
 
@@ -16,44 +17,56 @@ This repository provides a custom node for [ComfyUI](https://github.com/comfyano
    git clone https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON.git
    ```
 2. Restart ComfyUI to load the custom node.
-#### Alt method
-1. Install from ComfyUI manager
+
+#### Alternative Method
+
+1. Install using the ComfyUI manager.
 
 ![ComfyUI manager](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/manager.png)
 
 ## Usage
 
-![node in menu](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_in_menu.png)
+![Node in menu](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_in_menu.png)
 
 ### Node Inputs
 
+- **Prompt List**: Select an existing prompt list or create a new one.
+- **New List Name**: Specify the name for a new list (used when creating a new list).
 - **Prompt Name** (required): A unique name for the prompt.
 - **Positive Prompt** (required for new prompts): The positive description of the prompt.
 - **Negative Prompt** (optional): The negative description of the prompt.
+- **Random** (boolean, default `False`): Enable random selection of prompts from the list.
 - **Overwrite** (boolean, default `False`): Whether to overwrite an existing prompt with the same name.
-- **Console log** (boolean, default `False`): Prints prompt details to the console for debugging.
+- **Console Log** (boolean, default `False`): Prints prompt details to the console for debugging.
 
 ### Node Outputs
 
 - **Positive Prompt**: The saved or retrieved positive prompt.
 - **Negative Prompt**: The saved or retrieved negative prompt.
+- **Full List**: The entire prompt list as a JSON string.
 
 ### Example Workflow
 
 1. Add or update a prompt with the following inputs:
-   - **Prompt Name**: `SunsetScene`
-   - **Positive Prompt**: `A breathtaking sunset over the mountains`
-   - **Negative Prompt**: `Low quality, blurry`
+   - **Prompt List**: `test.json`
+   - **New List Name**: `test`
+   - **Prompt Name**: `girl on helmet`
+   - **Positive Prompt**: `concept art Girl in black thin, oily latex, black motorcycle helmet, black glass on helmet, pours a bucket of yellow paint on himself, paint dripping down his body, yellow silk long scarf, sexy, dynamics. Black mirrors in the background, reflections. digital artwork, illustrative, painterly, matte painting, highly detailed`
+   - **Negative Prompt**: `photo, photorealistic, realism, ugly`
    - **Overwrite**: `True`
-   - **Console log**: `True`
+   - **Console Log**: `True`
+   - **Random**: `True`
 
-![node](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node.png)
+![Node](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node.png)
+![Node_prev_list](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_prev_list.png)
 
-2. The prompt will be saved to the JSON file, and its details will appear in the console if logging is enabled.
+2. The prompt will be saved to the specified JSON file, and its details will appear in the console if logging is enabled.
+
+![log](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/log.png)
 
 ### File Structure
 
-Prompts are stored in `list.json` in the following format:
+Prompts are stored in individual JSON files in the following format:
 ```json
 {
     "SunsetScene": {
@@ -70,13 +83,16 @@ You can also use this node programmatically. Here's an example:
 from your_module import ComfyUI_Prompt_JSON
 
 manager = ComfyUI_Prompt_JSON()
-positive, negative = manager.process(
+positive, negative, full_list = manager.process(
     **{
+        "Prompt List": "New List",
+        "New List Name": "NaturePrompts",
         "Prompt Name": "SunsetScene",
         "Positive Prompt": "A breathtaking sunset over the mountains",
         "Negative Prompt": "Low quality, blurry",
+        "Random": False,
         "Overwrite": True,
-        "Console log": True
+        "Console Log": True
     }
 )
 ```
@@ -84,9 +100,11 @@ positive, negative = manager.process(
 ### Error Handling
 
 - Raises a `ValueError` if a required field (e.g., `Prompt Name` or `Positive Prompt`) is missing.
+- Displays detailed error messages for debugging in the console.
 
-![error prompt name](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_err1.png)
-![error positive prompt](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_err2.png)
+![Error prompt name](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_err1.png)
+![Error positive prompt](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_err2.png)
+![Error New List Name](https://github.com/TKRLAB/ComfyUI_Prompt_List_JSON/blob/master/images/node_err3.png)
 
 ## License
 
